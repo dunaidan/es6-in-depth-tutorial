@@ -1,19 +1,47 @@
-function Wizard(name, house, pet) {
-    this.name = name;
-    this.house = house;
-    this.pet = pet;
+let a = new Set();
+a.add(5);
+a.add(43);
+a.add("Whoohoo");
+a.add({x: 50, y: 200});
+a.add(5);
+console.log(a.size);
+console.log(a.has(5));
 
-    this.greet = () => `I'm ${this.name} from ${this.house}`;
+let numbers = [5, 7, 8, 13, 17];
+let numSet = new Set(numbers);
+console.log(numSet);
 
+for (let element of numSet.values()) {
+    console.log(element);
 }
 
-Wizard.prototype.petName;
-Wizard.prototype.info = function () {
-    return `I have a ${this.pet} named ${this.petName}`;
+
+let chars = "asdafasgasdafsgfhdrgwefa";
+let charsArr = chars.split("");
+let charsSet = new Set(charsArr);
+console.log(charsSet);
+
+let b = new Map();
+let key1 = "string key";
+let key2 = { a: "key" };
+b.set(key1, "return value from a string key");
+b.set(key2, "return value from a object key");
+
+for (let [key, value] of b.entries()) {
+    console.log(`${key} points to ${value}`);
 }
 
-let harry = new Wizard("Harry Potter", "Gryffindor", "Owl");
-harry.petName = "Hedwig";
-console.log(harry);
-console.log(harry.greet());
-console.log(harry.info());
+let string = "afwagwfsedgrtherfsfasdrgfatt";
+let stringArr = string.split("");
+let myMap = new Map();
+
+for (let char of stringArr.values()) {
+    if(myMap.has(char)) {
+        let val = myMap.get(char);
+        myMap.set(char, val+1)
+    } else {
+        myMap.set(char, 1);
+    }
+}
+
+console.log(myMap);
