@@ -1,12 +1,19 @@
-import Animal from "./Animal";
-import Lion from "./Lion";
+function Wizard(name, house, pet) {
+    this.name = name;
+    this.house = house;
+    this.pet = pet;
 
-Animal.run();
+    this.greet = () => `I'm ${this.name} from ${this.house}`;
 
-let king = new Animal("Mufasa", 4,5);
-console.log(king);
-king.hello();
+}
 
-let son = new Lion("Simba", 2, "golden");
-console.log(son);
-son.hello();
+Wizard.prototype.petName;
+Wizard.prototype.info = function () {
+    return `I have a ${this.pet} named ${this.petName}`;
+}
+
+let harry = new Wizard("Harry Potter", "Gryffindor", "Owl");
+harry.petName = "Hedwig";
+console.log(harry);
+console.log(harry.greet());
+console.log(harry.info());
